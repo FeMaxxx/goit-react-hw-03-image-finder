@@ -14,12 +14,10 @@ class Searchbar extends Component {
     imagesSearch: "",
   };
 
-  handleSubmit = (values, { resetForm }) => {
+  handleSubmit = () => {
     if (this.state.imagesSearch === "") {
       return;
     }
-
-    resetForm();
 
     this.props.onSubmitForm(this.state.imagesSearch);
     this.setState({ imagesSearch: "" });

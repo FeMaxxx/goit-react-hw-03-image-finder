@@ -14,7 +14,9 @@ class Modal extends Component {
   closeModal = (e) => {
     const { closeModal } = this.props;
 
-    closeModal();
+    if (e.target.getAttribute("name") === "overvay") {
+      closeModal();
+    }
   };
 
   escCloseModal = (e) => {
@@ -29,7 +31,7 @@ class Modal extends Component {
     const { bigImg } = this.props;
 
     return (
-      <Overlay onClick={this.closeModal}>
+      <Overlay name="overvay" onClick={this.closeModal}>
         <div>
           <Img src={bigImg} alt="BigImage" />
         </div>
